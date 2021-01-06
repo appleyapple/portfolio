@@ -75,14 +75,21 @@ ol, ul {
 }
 
 #intro {
+    position: relative;
     text-align: center;
-    padding-top: 50px;
+    height: 100vh;
+    padding-top: 20vh;
+}
+
+#about {
+    color: var(--soft-black);
+    background-color: var(--white);
+    padding: 5em;
 }
 
 #portfolio {
     color: var(--soft-white);
     background-color: var(--grey4);
-    margin: 50px 0;
     padding: 5em;
 }
 
@@ -95,11 +102,11 @@ ol, ul {
     width: 300px;
 }
 
-#intro h1, #intro h3 , #intro .links{ 
+#intro h1, #intro h4 , #intro .links{ 
     padding: 1.5em 0 0 0;
 }
 
-#portfolio h2 {
+#portfolio h2, #about h2, #projects h2 {
     padding: 0 0 2em 0;
 }
 
@@ -125,6 +132,24 @@ a.button {
 a.button:hover {
     background-color: var(--grey7);
     color: var(--soft-white);
+}
+
+.arrow {
+    border: solid var(--soft-black);
+    border-width: 0 5px 5px 0;
+    display: inline-block;
+    padding: 10px;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.see-more {
+    position: absolute;
+    bottom: 40px;
+    width: 99%;
 }
 
 .col {
