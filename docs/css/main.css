@@ -20,15 +20,20 @@
     box-sizing: border-box;
     padding: 0 0;
     margin: 0 0;
+    /* border: 1px solid red; */
 }
 
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     background-color: var(--soft-white);
 }
 
 ol, ul {
     list-style: none;
+}
+
+p {
+    font-size: 22px;
 }
 
 #nav {
@@ -38,7 +43,7 @@ ol, ul {
     position: fixed;
     top: 0;
     z-index: 1;
-    width: 100vw;
+    width: 100%;
 }
 
 #nav li {
@@ -68,7 +73,7 @@ ol, ul {
 }
 
 #nav .navlink:hover::after {
-    width: 4.5em;
+    width: 4em;
 }
 
 #main {
@@ -87,24 +92,28 @@ ol, ul {
     background-color: var(--white);
     display: inline-block;
     padding: 5em;
+    width: 100%;
 }
 
 #portfolio {
     color: var(--soft-white);
     background-color: var(--grey4);
     padding: 5em;
+    width: 100%;
 }
 
 #projects {
     padding: 5em;
+    width: 100%;
 }
 
 #contact {
     color: var(--soft-white);
     background-color: var(--grey6);
-    padding: 5em;
+    padding: 3em;
     display: relative;
     text-align: center;
+    width: 100%;
 }
 
 #intro img {
@@ -115,14 +124,24 @@ ol, ul {
     padding: 1.5em 0 0 0;
 }
 
-#portfolio h2, #about h2, #projects h2, #contact h2 {
-    padding: 0 0 2em 0;
+#about h2, #portfolio h2, #projects h2 {
+    padding: 0 0 1em 0;
+    font-size: 36px;
+}
+
+#projects p {
+    font-size: 20px;
+}
+
+#projects .tags p {
+    font-size: 14px;
 }
 
 #contact p {
     display: inline-block;
     vertical-align: middle;
-    padding: 0 5em;
+    padding: 1em;
+    font-size: 16px;
 }
 
 .wrapper {
@@ -180,11 +199,15 @@ a.button:hover {
 }
 
 .profile-details-col {
+    position: relative;
     float: left;
 }
 
 .profile-details-col.card {
     width: 30%;
+}
+
+.fan-out {
 }
 
 .profile-details-col.description {
@@ -197,10 +220,6 @@ a.button:hover {
     display: table;
 }
 
-.profile-details p {
-    font-size: 18px;
-}
-
 .id-card {
     width: 230px;
     height: 280px;
@@ -211,7 +230,6 @@ a.button:hover {
     border-radius: 2px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     padding: 5px;
-    /* transition: all 0.3s; */
 
     transform-origin: center top;
 }
@@ -226,10 +244,46 @@ a.button:hover {
     padding: 0 1em 0 1em;
 }
 
-.profile-details hr {
-    transform: rotate(90deg);
-    border: 1px solid var(--soft-black);
-    width: 300px;
+.two-col {
+    width: 100%;
+}
+
+.portfolio-item {
+    float: left;
+    width: 50%;
+    padding: 20px;
+}
+
+.portfolio-item::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.progress-bar {
+    background-color: #e0e0e0;
+    padding: 5px;
+    border-radius: 20px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
+}
+
+.progress-bar-fill {
+    display: block;
+    height: 22px;
+    background-color: #659cef;
+    border-radius: 20px;
+    
+    transition: width 1s ease-in-out;
+}
+
+.progress-bar-fill.animated[style] {
+    width: 0% !important;
+}
+
+.other-skills {
+    display: block;
+    padding: 20px;
+
 }
 
 .col {
@@ -364,13 +418,16 @@ a.button:hover {
     }
 }
 
-@media screen and (max-width: 1250px) {
+@-webkit-keyframes bar {
+    0% { width: 0; }
+}
 
-    /* One column layout on mobile */
+@media screen and (max-width: 1300px) {
+
     .col {
-      width: 100%;
-      display: block;
-    }
+        width: 100%;
+        display: block;
+      }
     .profile-details-col.card {
         width: 100%;
     }
@@ -380,6 +437,18 @@ a.button:hover {
     }
     .profile-details-col.description {
         width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+
+    #projects p {
+        font-size: 16px;
+    }
+    
+    #projects .tags p {
+        font-size: 11px;
     }
 
 }
