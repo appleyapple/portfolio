@@ -85,6 +85,7 @@ ol, ul {
 #about {
     color: var(--soft-black);
     background-color: var(--white);
+    display: inline-block;
     padding: 5em;
 }
 
@@ -96,7 +97,6 @@ ol, ul {
 
 #projects {
     padding: 5em;
-    max-width: 1000 px;
 }
 
 #contact {
@@ -108,7 +108,7 @@ ol, ul {
 }
 
 #intro img {
-    width: 300px;
+    width: 200px;
 }
 
 #intro h1, #intro h4 , #intro .links{ 
@@ -125,6 +125,11 @@ ol, ul {
     padding: 0 5em;
 }
 
+.wrapper {
+    width: 70%;
+    margin: auto;
+}
+
 a.button {
     -webkit-appearance: button;
     -moz-appearance: button;
@@ -138,6 +143,7 @@ a.button {
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    width: 10em;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
@@ -150,10 +156,11 @@ a.button:hover {
 }
 
 .arrow {
+    position: relative;
     border: solid var(--soft-black);
-    border-width: 0 5px 5px 0;
+    border-width: 0 6px 6px 0;
     display: inline-block;
-    padding: 10px;
+    padding: 15px;
 }
 
 .down {
@@ -161,18 +168,78 @@ a.button:hover {
     -webkit-transform: rotate(45deg);
 }
 
+.arrow.animated {
+    -moz-animation: bounce 1s;
+    -webkit-animation: bounce 1s;
+    animation: bounce 1s;
+}
+
 .see-more {
-    position: absolute;
-    bottom: 40px;
-    width: 99%;
+    text-align: center;
+    padding: 50px;
+}
+
+.profile-details-col {
+    float: left;
+}
+
+.profile-details-col.card {
+    width: 30%;
+}
+
+.profile-details-col.description {
+    width: 70%;
+}
+
+.profile-details::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.profile-details p {
+    font-size: 18px;
+}
+
+.id-card {
+    width: 230px;
+    height: 280px;
+    font-size: 12px;
+
+    background: url("../img/id-card.jpg") no-repeat;
+    background-color: var(--white);
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    padding: 5px;
+    /* transition: all 0.3s; */
+
+    transform-origin: center top;
+}
+
+.id-card.animated {
+    -moz-animation: dangle 3s;
+    -webkit-animation: dangle 3s;
+    animation: dangle 3s;
+}
+
+.profile-details ul li {
+    padding: 0 1em 0 1em;
+}
+
+.profile-details hr {
+    transform: rotate(90deg);
+    border: 1px solid var(--soft-black);
+    width: 300px;
 }
 
 .col {
     float: left;
+    width: 50%;
     padding: 10px 10px;
 }
 
 .row {
+    display: table;
 }
 
 .row:after {
@@ -186,9 +253,8 @@ a.button:hover {
     background-color: var(--white);
     border-radius: 2px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    height: 400px;
-    width: 450px;
     padding: 5px;
+    height: 450px;
     transition: all 0.3s;
     flex: 0 1 49%;
 }
@@ -238,7 +304,7 @@ a.button:hover {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-.project-card:hover p, .project-card:hover .tags {
+.project-card:hover p, .project-card:hover .tags, .project-card:hover h3 {
     webkit-filter: blur(4px); /* Chrome, Safari, Opera */
     filter: blur(4px);
 }
@@ -261,12 +327,59 @@ a.button:hover {
     vertical-align: middle;
 }
 
-@media screen and (max-width: 1200px) {
+@-webkit-keyframes dangle {
+    10% { -webkit-transform: rotate(20deg); }
+    30% { -webkit-transform: rotate(-18deg); }
+    50% { -webkit-transform: rotate(12deg); }
+    70% { -webkit-transform: rotate(-10deg); }
+    90% { -webkit-transform: rotate(4deg); }
+}
+
+@-webkit-keyframes bounce {
+    0% {
+        top: 0;
+        animation-timing-function: ease-out;
+      }
+    17% {
+        top: 15px;
+        animation-timing-function: ease-in;
+    }
+    34% {
+        top: 0;
+        animation-timing-function: ease-out;
+    }
+    51% {
+        top: 8px;
+        animation-timing-function: ease-in;
+    }
+    68% {
+        top: 0px;
+        }
+    85% {
+        top: 3px;
+        animation-timing-function: ease-in;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+@media screen and (max-width: 1250px) {
 
     /* One column layout on mobile */
     .col {
       width: 100%;
       display: block;
+    }
+    .profile-details-col.card {
+        width: 100%;
+    }
+    .id-card {
+        display: block;
+        margin: auto;
+    }
+    .profile-details-col.description {
+        width: 100%;
     }
 
 }
