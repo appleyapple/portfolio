@@ -1,27 +1,50 @@
 
 //-- Animation handling --//
 
-//id card fanout
-var card = document.getElementsByClassName('id-card');
+// mobile nav toggle 
+const navMenu = document.getElementById('nav-menu'), 
+      navToggle = document.getElementById('nav-toggle'),
+      navClose = document.getElementById('nav-close');
 
-card[0].addEventListener('animationend', function(e) {
-  card[0].classList.remove('animated');
-});
+if (navToggle) {
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.add('show-menu');
+  })
+}
 
-card[0].addEventListener('mouseover', function(e) {
-  card[0].classList.add('animated')
-})
+if (navToggle) {
+  navClose.addEventListener('click', () => {
+    navMenu.classList.remove('show-menu');
+  })
+}
+
+// add shadow to header bg when scrolling
+function scrollHeader() {
+  const nav = document.getElementById('header');
+  // when scroll is >200 viewport height, add scroll header class to header tag
+  if (this.scrollY >= 80) {
+    nav.classList.add('scroll-header');
+  }
+  else {
+    nav.classList.remove('scroll-header');
+  }
+}
+window.addEventListener('scroll', scrollHeader)
 
 // see-more arrow bounce
-var arrow = document.getElementsByClassName('arrow down');
+const arrow = document.getElementsByClassName('arrow down');
 
-arrow[0].addEventListener('animationend', function(e) {
-  arrow[0].classList.remove('animated');
-});
+if (arrow) {
+  arrow[0].addEventListener('animationend', () => {
+    arrow[0].classList.remove('bounce');
+  });
+}
 
-arrow[0].addEventListener('mouseover', function(e) {
-  arrow[0].classList.add('animated')
-})
+if (arrow) {
+  arrow[0].addEventListener('mouseover', () => {
+    arrow[0].classList.add('bounce');
+  })
+}
 
 // progress bar on scroll into view
 

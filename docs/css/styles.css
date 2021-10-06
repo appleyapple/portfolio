@@ -1,0 +1,675 @@
+/* ======================= CSS VARIABLES ======================= */
+:root {
+    --header-height: 4rem;
+
+    /* COLOURS */
+    --soft-white: #fcfcfc;
+    --soft-black: #0c0c0c;
+    --white: #fff;
+
+    --bgcolor: #F5F5F5;
+    --highlight: #96D9D0;
+    --light: #B5BAD0;
+    --medium: #7389AE;
+    --dark: #416788;
+
+    /* FONTS */
+    --body-font: 'Roboto', Arial, Helvetica, sans-serif;
+
+    --big-font-size: 2rem;
+    --normal-font-size: 1.3rem;
+    --small-font-size: 0.8rem;
+    --tiny-font-size: 0.75rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+
+    --medium-font-weight: 500;
+    --bold-font-weight: 600;
+    
+    /* BOTTOM MARGINS */
+    --mb-0-25: 0.25rem;
+    --mb-0-5: 0.5rem;
+    --mb-0-75: 0.75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+
+    /* SCREEN SIZE */
+    --min-desktop: 768px;
+    --max-mobile: 
+}
+
+* {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-padding-top: var(--header-height);
+    /* border: 1px solid red; */
+}
+
+body {
+    margin: 0 0 var(--header-height) 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--bgcolor);
+}
+
+h1, h2, h3, h4 {
+    font-weight: var(--bold-font-weight);
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ======================= CSS CLASSES ======================= */
+.section {
+    padding: 5em 2em;
+}
+
+.section_title {
+    font-size: var(--h1-font-size);
+    margin-bottom: 0.25em;
+}
+
+.section_subtitle {
+    font-size: var(--large-font-size);
+    margin: 0;
+}
+
+/* ======================= LAYOUT ======================= */
+
+.container {
+    padding-right: 2rem;
+    margin-left: var(--mb-1-5);
+    margin-right: var(--mb-1-5);
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.header {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: var(--bgcolor);
+}
+
+/* ======================= NAV ======================= */
+.nav {
+    height: var(--header-height);
+    display: flex;  
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_logo, nav_toggle {
+    font-size: var(--h2-font-size);
+    font-weight: var(--medium-font-weight);
+    color: var(--soft-black);
+    transition: all 0.2s;
+}
+
+.nav_logo:hover {
+    color: var(--highlight);
+}
+
+.nav_toggle {
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.nav_toggle:hover {
+    color: var(--highlight);
+}
+
+.nav_list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.nav_link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em 0.5em;
+    color: var(--soft-black);
+    font-size: var(--small-font-size);
+    font-weight: var(--medium-font-weight);
+    transition: all 0.2s;
+}
+
+.nav_link:hover {
+    color: var(--highlight);
+}
+
+.nav_icon {
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 767px) {
+
+    .nav_menu {
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--soft-white);
+        padding: 2rem 1.5rem 4rem;
+        box-shadow: 0 -1 4px rgba(99, 73, 73, 0.25);
+        border-radius: 1.5rem 1.5rem 0 0;
+        transition: 0.3s;
+    }
+
+    .wrapper {
+        width: 100%;
+        margin: auto;
+    }
+
+    .skills-item {
+        width: 100%;
+    }
+    
+    #projects p {
+        font-size: 16px;
+    }
+    
+    #projects .tags p {
+        font-size: 11px;
+    }
+}
+
+/* CLOSE MENU */
+.nav_close {
+    position: absolute;
+    right: 1.3rem;
+    bottom: 0.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    /* color: var(--highlight); */
+}
+
+.nav_close:hover {
+    color: var(--highlight);
+}
+
+/* CHANGE BG HEADER SHADOW */
+.scroll-header {
+    box-shadow: 0 -1px 20px rgba(0, 0, 0, 0.25);
+    transition: 0.3s ease-in-out;
+}
+
+/* ======================= FRONT PAGE ======================= */
+.intro {
+    position: relative;
+    text-align: center;
+    height: 100vh;
+    padding-top: 20vh;
+
+    /* GRANDIENT BG */
+    background: linear-gradient(-45deg, #96D9D0, #B5BAD0, #7389AE, #416788);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    height: 100vh;
+}
+
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+.intro img {
+    width: 200px;
+}
+
+.intro h1, .intro h4 {
+    color: var(--soft-white);
+}
+
+.intro h1, .intro h4, .intro .links{ 
+    padding: 1.5em 0 0 0;
+}
+
+/* ======================= ABOUT ======================= */
+.about {
+    color: var(--soft-black);
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 4em 2em;
+}
+
+.section_title-about strong {
+    display: block;
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.section_subtitle-about {
+    color: var(--soft-white);
+    background-color: var(--medium);
+    padding: 0.7em 1em;
+}
+
+.portrait {
+    display: block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 15em;
+    margin: 1em auto;
+}
+
+@media screen and (min-width: 768px) {
+    .about {
+        display: grid;
+        grid-template-areas: "title img" "subtitle img" "text img";
+        grid-column-gap: 2em;
+    }
+
+    .section_title-about {
+        grid-area: title;
+    }
+
+    .section_subtitle-about {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        position: relative;
+        left: -1em;
+        width: calc(100% + 2em);
+        padding: 0.7em 1em 0.7em 1em;
+        margin: auto;
+    }
+
+    .portrait {
+        grid-area: img;
+        width: 15em;
+        position: relative;
+        z-index: 2;
+        margin: auto;
+    }
+}
+
+/* ======================= TECHNICAL SKILL ======================= */
+.skills {
+    color: var(--soft-white);
+    background-color: var(--light);
+    padding: 5em;
+    width: 100%;
+}
+
+/* ======================= PROJECTS ======================= */
+#projects {
+    padding: 5em;
+    width: 100%;
+}
+
+/* ======================= FOOTER ======================= */
+#contact {
+    color: var(--soft-white);
+    background-color: var(--grey6);
+    padding: 3em;
+    display: relative;
+    text-align: center;
+    width: 100%;
+}
+
+#about h2, #skills h2, #projects h2 {
+    padding: 0 0 1em 0;
+    font-size: 36px;
+}
+
+#projects p {
+    font-size: 20px;
+}
+
+#projects .tags p {
+    font-size: 14px;
+}
+
+#contact p {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 1em;
+    font-size: 16px;
+}
+
+.wrapper {
+    width: 70%;
+    margin: auto;
+}
+
+/* ======================= BUTTONS ======================= */
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    background-color: var(--soft-white);
+    border: 0px solid;
+    border-radius: 30px;
+    color: var(--soft-black);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 10em;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+a.button:hover {
+    background-color: var(--highlight);
+    color: var(--soft-white);
+}
+
+.arrow {
+    position: relative;
+    border: solid var(--soft-white);
+    border-width: 0 6px 6px 0;
+    display: inline-block;
+    padding: 15px;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.arrow.bounce {
+    -moz-animation: bounce 1s;
+    -webkit-animation: bounce 1s;
+    animation: bounce 1s;
+}
+
+.see_more {
+    text-align: center;
+    padding: 50px;
+}
+
+.two-col {
+    width: 100%;
+}
+
+.skills-item {
+    float: left;
+    width: 50%;
+    padding: 20px;
+}
+
+.skills-item::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.progress-bar {
+    background-color: #e0e0e0;
+    padding: 5px;
+    border-radius: 20px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
+}
+
+.progress-bar-fill {
+    display: block;
+    height: 22px;
+    background-color: #659cef;
+    border-radius: 20px;
+    
+    transition: width 1s ease-in-out;
+}
+
+.progress-bar-fill.animated[style] {
+    width: 0% !important;
+}
+
+.other-skills {
+    display: block;
+    padding: 20px;
+
+}
+
+.col {
+    float: left;
+    width: 50%;
+    padding: 10px 10px;
+}
+
+.row {
+    display: table;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+.project-card {
+    position: relative;
+    background-color: var(--white);
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    padding: 5px;
+    height: 450px;
+    transition: all 0.3s;
+    flex: 0 1 49%;
+}
+
+.tags {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
+
+.tags li {
+    display: inline-block;
+    background-color: var(--grey1);
+    border-radius: 15px;
+    font-size: 12px;
+    padding: 0.5em;
+    margin: 3px 5px;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-image: linear-gradient(0deg, #304352 0%, rgb(0, 0, 0, 0) 100%);
+}
+
+.card-overlay ul {
+    position: absolute;
+    top: 30%;
+    text-align: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.card-overlay .links img {
+    object-fit: cover;
+    width: 25%;
+    max-width: 120px;
+}
+
+.project-card:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.project-card:hover p, .project-card:hover .tags, .project-card:hover h3 {
+    webkit-filter: blur(4px); /* Chrome, Safari, Opera */
+    filter: blur(4px);
+}
+
+.project-card:hover:hover .card-overlay {
+    opacity: 1;
+}
+
+.project-header {
+    margin: 2em 3%;
+}
+
+.project-description {
+    margin: 2em 3%;
+}
+
+.contact-icon img {
+    width: 2em;
+    margin-right: 1em;
+    vertical-align: middle;
+}
+
+@-webkit-keyframes bounce {
+    0% {
+        top: 0;
+        animation-timing-function: ease-out;
+      }
+    17% {
+        top: 15px;
+        animation-timing-function: ease-in;
+    }
+    34% {
+        top: 0;
+        animation-timing-function: ease-out;
+    }
+    51% {
+        top: 8px;
+        animation-timing-function: ease-in;
+    }
+    68% {
+        top: 0px;
+        }
+    85% {
+        top: 3px;
+        animation-timing-function: ease-in;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+@-webkit-keyframes bar {
+    0% { width: 0; }
+}
+
+
+/* SHOW MENU */
+.show-menu {
+    bottom: 0;
+}
+
+
+/* ======================= MEDIA SCREEN ======================= */
+@media screen and (min-width: 968px) {
+
+    :root {
+        --big-font: 3rem;
+        --h1-font: 2.25rem;
+        --h2-font: 1.5rem;
+        --h3-font: 1.25rem;
+        --normal-font: 1rem;
+        --small-font: 0.875rem;
+        --tiny-font: 0.815rem;
+    }
+
+    .wrapper {
+        width: 100%;
+    }
+}
+
+/* PROJECTS SECTION CARD DYNAMIC SIZING */
+@media screen and (min-width: 1155px) {
+    .col {
+        width: 50%;
+        display: block;
+      }
+}
+@media screen and (max-width: 1154px) {
+    .col {
+        width: 100%;
+        display: block;
+      }
+}
+
+/* SMALL SCREENS */
+@media screen and (max-width: 350px) {
+    .nav_menu {
+        pad: 2rem .25rem 4rem;
+    }
+
+    .nav_list {
+        column-gap: 0;
+    }
+}
+
+
+/* MEDIUM SCREENS */
+@media screen and (min-width: 768px) {
+    .header {
+        top: 0;
+        bottom: initial;
+    }
+
+    .header {
+        padding: 0 1rem;
+    }
+
+    .nav {
+        height: calc(var(--header-height) + 0.5rem);
+        column-gap: 1rem;
+    }
+
+    .nav_icon, .nav_close, .nav_toggle {
+        display: none;
+    }
+
+    .nav_list {
+        display: flex;
+        column-gap: 2rem;
+    }
+
+    .nav_menu {
+        margin-left: auto;
+    }
+
+    .nav.nav.container {
+        width: 100%;
+    }
+
+}
+
+/* LARGE SCREENS */
+@media screen and (min-width: 1024px) {
+    .header {
+        padding: 0;
+    }
+}
+

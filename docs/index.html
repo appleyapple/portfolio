@@ -6,37 +6,83 @@
 
 <html id="top">
     <head>
-        <!-- meta data -->
-        <title>Henry Yip2</title>
+        <!-- ========================= METADATA ========================= -->
+        <title>Portfolio: Henry Yip</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
         <!-- scripts, css, fonts, icons -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/styles.css"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     </head>
-    <body>
 
-        <!-- NAVBAR -->
-        <div id="nav">
-            <ul>
-                <li><a href="#top">Home</a></li>
-                <li><a class="navlink" href="#about">Profile</a></li>
-                <li><a class="navlink" href="#portfolio">Portfolio</a></li>
-                <li><a class="navlink" href="#projects">Projects</a></li>
-                <li><a class="navlink" href="#contact">Contact</a></li>
-            </ul>
-        </div>
+    <body>
+        <!-- ========================= NAVBAR ========================= -->
+        <header class="header" id="header">
+            <nav class="nav container">
+
+                <!-- LOGO -->
+                <a href="#" class="nav_logo">Henry</a>
+
+                <!-- NAV LINKS -->
+                <div class="nav_menu" id="nav-menu">
+                    <ul class="nav_list grid">
+                        <li class="nav_item">
+                            <a href="#about" class="nav_link">
+                                <i class="uil uil-user nav_icon"></i> About
+                            </a>
+                        </li>
+                        <li class="nav_item">
+                            <a href="#skills" class="nav_link">
+                                <i class="uil uil-file-alt nav_icon"></i> Skills
+                            </a>
+                        </li>
+                        <li class="nav_item">
+                            <a href="#timeline" class="nav_link">
+                                <i class="uil uil-history nav_icon"></i> Timeline
+                            </a>
+                        </li>
+                        <li class="nav_item">
+                            <a href="#projects" class="nav_link">
+                                <i class="uil uil-briefcase-alt nav_icon"></i> Projects
+                            </a>
+                        </li>
+                        <li class="nav_item">
+                            <a href="#photography" class="nav_link">
+                                <i class="uil uil-camera nav_icon"></i> Photography
+                            </a>
+                        </li>
+                        <li class="nav_item">
+                            <a href="#contact" class="nav_link">
+                                <i class="uil uil-at nav_icon"></i> Contact
+                            </a>
+                        </li>
+                    </ul>
+                    <span class="line"></span>
+
+                    <!-- NAV TOGGLE CLOSE -->
+                    <i class="uil uil-times nav_close" id="nav-close"></i>
+                </div>
+
+                <!-- NAV TOGGLE OPEN -->
+                <div class="nav_btns">
+                    <div class="nav_toggle" id="nav-toggle">
+                        <i class="uil uil-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </header>
 
         <div id="main">
 
-            <!-- INTRO -->
-            <div id="intro">
-                <img src="img/icons/github-light.svg" alt="portrait">
-                <h1>Henry Yip</h1>
-                <h4>Computer Science Student</h4>
+        <!-- ========================= FRONT PAGE ========================= -->
+
+            <section class="intro">
+                <img src="assets/icons/github-light.svg" alt="img">
+                <h1>Welcome</h1>
+                <h4>Yet another glorified resume by Henry Yip</h4>
 
                 <!-- LINKS -->
                 <div class="links">
@@ -44,77 +90,61 @@
                     <a href="HENRY-YIP-resume-2022.pdf" class="button">Resume</a>
 
                 </div>
-
-                <div class="see-more">
+                <div class="see_more">
                     <a href="#about"><i class="arrow down"></i></a>
                 </div>
+            </section>
 
-            </div>
-
-            <div id="about">
-                <div class="wrapper">
-                    <div class="profile-details">
-                        <div class="profile-details-col card">
-                            <ul id="id" class="id-card fan-out">
-                                <br><br><br><br><br><br><br><br><br><br>
-                                <li><b>Name: </b>Henry Yip</li><br>
-                                <li><b>Age: </b>22 years</li><br>
-                                <li><b>Location: </b>Coquitlam, BC, Canada</li><br>
-                                <li><b>Hobbies: </b>Sci-fi & animated films, table sports, basketball, games</li>
-                            </ul>
-                            <!-- <div class="fan-out">
-                                aaaaaaaaaaaa
-                            </div>
-                            <div class="fan-out">
-                                bbbbbbbbbbbb
-                            </div> -->
-                        </div>
-                        <div class="profile-details-col description">
-                            <h2>About Me</h2>
-                            <p><br>Hi there. I am a 4th year computer science student at Simon Fraser University, currently living in Coquitlam, BC. I love all things tech and have a passion for creating, consuming, and learning about it. I'm also a stickler for structure and order, and often find myself spending extra time on macro and micro details to improve overall quality or even just readability for the sake of structural organization. </p>
-                        </div>
-                    </div>
+        <!-- ========================= ABOUTME ========================= -->
+            <section class="about" id="about">
+                <h2 class="section_title section_title-about">
+                    Hello, I am <strong>Henry Yip</strong>
+                </h2>
+                <p class="section_subtitle section_subtitle-about">Computer science student</p>
+                <div class="about-body">
+                    <p><br>Currently a 4<sup>th</sup> year student at Simon Fraser University, located in Vancouver, BC. With love for all things tech-related, I have a passion for creating, consuming, and learning about tech. Here you will learn more details about me and my work that may not fit in a resume, including hobbies, stats, and other upcoming projects. </p>
                 </div>
-            </div>
+                <img src="assets/portrait.jpg" alt="portrait" class="portrait">
+            </section>
 
             <!-- LANGUAGES, FRAMEWORKS, SOFTWARE, & TECHNOLOGIES -->
-            <div id="portfolio">
+            <div class="skills" id="skills">
                 <div class="wrapper">
 
                     <h2>Languages, frameworks, & technologies</h2>
 
                     <div class="two-col">
-                        <div class="portfolio-item">
+                        <div class="skills-item">
                             <h3>C/C++</h3>
                             <div class="progress-bar">
                                 <span class="progress-bar-fill animated" style="width: 85%;"></span>
                             </div>
                         </div>
-                        <div class="portfolio-item">
+                        <div class="skills-item">
                             <h3>Python</h3>
                             <div class="progress-bar">
                                 <span class="progress-bar-fill animated" style="width: 85%;"></span>
                             </div>
                         </div>
-                        <div class="portfolio-item">
+                        <div class="skills-item">
                             <h3>Javascript</h3>
                             <div class="progress-bar">
                                 <span class="progress-bar-fill animated" style="width: 70%;"></span>
                             </div>
                         </div>
-                        <div class="portfolio-item">
+                        <div class="skills-item">
                             <h3>HTML</h3>
                             <div class="progress-bar">
                                 <span class="progress-bar-fill animated" style="width: 95%;"></span>
                             </div>
                         </div>
-                        <div class="portfolio-item">
+                        <div class="skills-item">
                             <h3>CSS</h3>
                             <div class="progress-bar">
                                 <span class="progress-bar-fill animated" style="width: 40%;"></span>
                             </div>
                         </div>
-                        <div class="portfolio-item">
+                        <div class="skills-item">
                             <h3>SQL</h3>
                             <div class="progress-bar">
                                 <span class="progress-bar-fill animated" style="width: 80%;"></span>
@@ -157,7 +187,7 @@
                                 <div class="card-overlay">
                                     <ul class="links">
                                         <li><a href="https://github.com/appleyapple/Findine">
-                                            <img src="img/icons/github-light.svg" alt="github">
+                                            <img src="assets/icons/github-light.svg" alt="github">
                                         </a></li>
                                     </ul>
                                 </div>
@@ -182,7 +212,7 @@
                                 <div class="card-overlay">
                                     <ul class="links">
                                         <li><a href="https://github.com/appleyapple/Music-Genre-Classification-with-CNN-Hybrid-Architectures">
-                                            <img src="img/icons/github-light.svg" alt="github">
+                                            <img src="assets/icons/github-light.svg" alt="github">
                                         </a></li>
                                     </ul>
                                 </div>
@@ -208,7 +238,7 @@
                                 <div class="card-overlay">
                                     <ul class="links">
                                         <li><a href="https://github.com/appleyapple/Pokemon-Classifier-NN">
-                                            <img src="img/icons/github-light.svg" alt="github">
+                                            <img src="assets/icons/github-light.svg" alt="github">
                                         </a></li>
                                     </ul>
                                 </div>
@@ -232,7 +262,7 @@
                                 <div class="card-overlay">
                                     <ul class="links">
                                         <li><a href="https://github.com/appleyapple/EasyGlucose">
-                                            <img src="img/icons/github-light.svg" alt="github">
+                                            <img src="assets/icons/github-light.svg" alt="github">
                                         </a></li>
                                     </ul>
                                 </div>
@@ -245,22 +275,22 @@
             </div>
 
             <!-- CONTACT INFO -->
-            <footer id="contact">
+            <!-- <footer id="contact">
                 <div class="wrapper">
 
                     <h2>Contact</h2>
                 
                     <p>
-                        <i class="contact-icon"><img src="img/icons/email-light.svg" alt="email"></i>
+                        <i class="contact-icon"><img src="assets/icons/email-light.svg" alt="email"></i>
                         henriyip@gmail.com
                     </p>
                     <p>
-                        <i class="contact-icon"><img src="img/icons/phone-light.svg" alt="phone"></i>
+                        <i class="contact-icon"><img src="assets/icons/phone-light.svg" alt="phone"></i>
                         (778)-776-6178
                     </p>
                     
                 </div>
-            </footer>
+            </footer> -->
 
         </div>
 
