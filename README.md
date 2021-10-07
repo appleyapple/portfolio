@@ -3,7 +3,7 @@
 #todo
 
 
-redo technical skills w/o bars: include stats (pulled from github?) like % used languages, # repos, # years experience, # bytes of code per in language
+dynamically create bars for languages based off github user
 
 
 https://docs.github.com/en/rest/reference/repos#list-repository-languages
@@ -15,16 +15,13 @@ https://stackoverflow.com/questions/8713596/how-to-retrieve-the-list-of-all-gith
 https://docs.github.com/en/rest/reference/repos#list-repositories-for-a-user
 
 
-add timeline
+add timeline, education, relavent coursework
 
 
 add photography page
 
 
 add footer w/ contacts
-
-
-website responsiveness @ iphoneX dims
 
 
 split resume button 1/4 for direct download
@@ -34,6 +31,9 @@ in about me, add icon beside sfu, vancouver, etc and on hover change the portrai
 
 
 navbar hover link animation
+
+
+navbar home button enlarge
 
 
 imgs:
