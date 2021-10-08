@@ -18,10 +18,10 @@ https://docs.github.com/en/rest/reference/repos#list-repositories-for-a-user
 add timeline, education, relavent coursework
 
 
+front page add better icon? idk 
+
+
 add photography page
-
-
-add footer w/ contacts
 
 
 split resume button 1/4 for direct download

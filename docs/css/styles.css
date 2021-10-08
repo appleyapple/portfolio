@@ -395,7 +395,7 @@ img {
 
 @media screen and (max-width: 967px) {
     .skills {
-        padding: 2em;
+        padding: 5em 2em;
     }
 
     .skills-item {
@@ -416,15 +416,15 @@ img {
 }
 
 /* ======================= PROJECTS ======================= */
-#projects {
-    padding: 5em;
+.projects {
+    padding: 5em 1em;
     width: 100%;
 }
-
 
 .col {
     float: left;
     width: 50%;
+    /* max-width: 600px; */
     padding: 10px 10px;
 }
 
@@ -452,6 +452,8 @@ img {
 
 .tags {
     position: absolute;
+    max-height: 4.5rem;
+    overflow: hidden;
     bottom: 15px;
     left: 15px;
 }
@@ -474,6 +476,8 @@ img {
     height: 100%;
     width: 100%;
     opacity: 0;
+    overflow: scroll;
+    text-overflow: ellipsis;
     transition: .5s ease;
     background-image: linear-gradient(0deg, var(--highlight) 0%, rgb(0, 0, 0, 0) 100%);
 }
@@ -512,13 +516,17 @@ img {
 
 .project-description {
     margin: 2em 3%;
+    max-height: 9.5em;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 
 /* ======================= FOOTER ======================= */
 #contact {
     color: var(--soft-white);
-    background-color: var(--grey6);
+    background-color: var(--light);
     padding: 3em;
     display: relative;
     text-align: center;
